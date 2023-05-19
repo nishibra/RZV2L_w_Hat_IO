@@ -61,8 +61,8 @@ https://files.seeedstudio.com/wiki/Grove-TF_Mini_LiDAR/res/SJ-PM-TF-Luna-A03-Pro
 
 ### I2C接続の確認
 
-uEnv.txtでi2cを活性化しておきます。
-以下でポートとアドレスが確認できます。
+uEnv.txtでi2cを活性化しておきます。ポート4が活性化され、他のポートはシステムで使われています。
+以下でポートとアドレスが確認できます。TFLunaはポート4 アドレス10になります。RTCのアドレスは68です。
 ```
 # ls /dev/*i2c*
 # /dev/i2c-1 ・・・
