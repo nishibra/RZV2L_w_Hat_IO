@@ -36,6 +36,19 @@ enable_overlay_gpio=yes
 ```
 を追加するとUART/I2C/GPIOが活性化します。詳細は同じフォルダーにあるreadme.txtをご参照ください。 
 
+### KRSをコントロールしてみよう
+
+class_krs_dr.pyをダウンロードしてRZボードに転送します。
+```
+$ scp class_krs_dr.py root@192.168.8.99:~root/sv
+$ ssh root@192.168.8.99
+
+# python3 class_krs_dr.py
+```
+でサーボが動作します。
+
+
+
 ### FTDI install driver
 
 USBのシリアルドライバーを使用するにはFTDIのドライバーをbitbakeする必要があります。
