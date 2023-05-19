@@ -2,6 +2,9 @@
 
 RZ-BoardにRasPi4用HATを組み合わせてロボットを開発します。
 
+![RZV2L_w_Hat_IO](/pics/rz_hat.jpg)
+
+
 Raspberry Piへの電源供給は外付けのプッシュスイッチによってON/OFFする事ができ、更にサーボモータなどをコントロールするRS-485とTTL I/F、およびI2C　I/Fを装備しています。
 
 >DXHAT(BTE100): [（株）ベストテクノロジー](https://www.besttechnology.co.jp/modules/knowledge/?BTE100%20DXHAT)
