@@ -28,9 +28,13 @@ HATの代わりにこれを接続することもできます。
 UARTやI2Cを起動するにはDiskのbootにあるuEnv.txtを編集します。
 
 ```
+# nano //boot/uEnv.txt
+--以下を追加します。--
 enable_overlay_uart2=yes
+enable_overlay_i2c=yes
+enable_overlay_gpio=yes
 ```
-を追加するとUARTが活性します。 
+を追加するとUARTが活性します。詳細は同じフォルダーにあるreadme.txtをご参照ください。 
 
 ### FTDI install driver
 
