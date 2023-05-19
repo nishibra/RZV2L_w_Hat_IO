@@ -46,6 +46,7 @@ https://ftdichip.com/drivers/d2xx-drivers/
 ## I2Cを使う場合
 
 HATでI2Cを使用する場合2KΩ程度のプルアップ抵抗が必要です。
+
 ![プルアップ抵抗](/pics/pullup.jpg)
 
 Python3ではsmbus2をインストールして使ってください。
