@@ -5,6 +5,7 @@ RZ-BoardにRasPi4用HATを組み合わせてロボットを開発します。
 ![RZV2L_w_Hat_IO](/pics/rz_hat.jpg)
 
 
+
 Raspberry Piへの電源供給は外付けのプッシュスイッチによってON/OFFする事ができ、更にサーボモータなどをコントロールするRS-485とTTL I/F、およびI2C　I/Fを装備しています。
 
 >DXHAT(BTE100): [（株）ベストテクノロジー](https://www.besttechnology.co.jp/modules/knowledge/?BTE100%20DXHAT)
@@ -14,9 +15,51 @@ RasPi4用HATなので一部改造が必要です。
 
 ## Serial servoを接続
 
-### BTE094 TTL2DXIF
+Serial servoを接続するにはBTE094 TTL2DXIFを使うと便利です。DXHATにはこれが搭載されており、ttySC2に接続されています。
+HATの代わりにこれを接続することもできます。
 
-https://www.besttechnology.co.jp/modules/knowledge/?BTE094%20TTL2DXIF
+[BTE094 TTL2DXIF](https://www.besttechnology.co.jp/modules/knowledge/?BTE094%20TTL2DXIF)
+
+### uEnv.txtの編集
+UARTやI2Cを起動するにはDiskのbootにあるuEnv.txtを編集します。
+
+```
+enable_overlay_uart2=yes
+```
+を追加するとUARTが活性します。 
+
+### FTDI install driver
+
+USBのシリアルドライバーを使用するにはFTDIのドライバーをbitbakeする必要があります。
+
+https://ftdichip.com/drivers/d2xx-drivers/
+
+
+## I2Cを使う場合
+
+HATでI2Cを使用する場合2KΩ程度のプルアップ抵抗が必要です。
+
+```
+$ pip3 install smbus2
+
+>>import smbus2 as sambus
+
+
+```
+#### TFLuna-I2C_python
+
+https://github.com/budryerson/TFLuna-I2C_python
+
+https://files.seeedstudio.com/wiki/Grove-TF_Mini_LiDAR/res/SJ-PM-TF-Luna-A03-Product-Manual.pdf
+### I2C接続の確認
+
+uEnv.txtでi2cを活性
+```
+# ls /dev/*i2c*
+# /dev/i2c-1 ・・・
+# i2cdetect -y 1
+```
+
 
 ### new servo
 ```
@@ -54,43 +97,4 @@ CP:PWM
 <#1CA#2CA#3CA#1CV#3CV#4CV>
 (#1CA=??CV=??)(#2CA=??)(#3CA=??CV=??)(#4CV=??)
 これはサーボ側のパケット処理をOSのqueueを用いて行っていた時の名残ですが、ホスト側も頭から順にqueueに投げる想定で処理すればお気楽かと。
-
-```
-### uEnv.txtの編集
-
-boot diskにあるuEnv.txtを編集します。
-
-```
-enable_overlay_uart2=yes
-```
-を追加する。 
-
-### FTDI install driver
-
-https://ftdichip.com/drivers/d2xx-drivers/
-
-
-
-### I2Cを使う場合
-
-```
-$ pip3 install smbus2
-
->>import smbus2 as sambus
-
-
-```
-#### TFLuna-I2C_python
-
-https://github.com/budryerson/TFLuna-I2C_python
-
-https://files.seeedstudio.com/wiki/Grove-TF_Mini_LiDAR/res/SJ-PM-TF-Luna-A03-Product-Manual.pdf
-### I2C接続の確認
-
-uEnv.txtでi2cを活性
-```
-# ls /dev/*i2c*
-# /dev/i2c-1 ・・・
-# i2cdetect -y 1
-```
 
