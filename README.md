@@ -34,7 +34,7 @@ enable_overlay_uart2=yes
 enable_overlay_i2c=yes
 enable_overlay_gpio=yes
 ```
-を追加するとUARTが活性します。詳細は同じフォルダーにあるreadme.txtをご参照ください。 
+を追加するとUART/I2C/GPIOが活性化します。詳細は同じフォルダーにあるreadme.txtをご参照ください。 
 
 ### FTDI install driver
 
