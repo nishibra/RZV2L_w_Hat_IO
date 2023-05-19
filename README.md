@@ -59,14 +59,17 @@ $ pip3 install smbus2
 
 ### TFLuna-I2C_python
 
-https://github.com/budryerson/TFLuna-I2C_python
+TFLuna-I2Cを使ってみます。サンプルを以下gitHubよりダウンロードします。
+[gitHub](https://github.com/budryerson/TFLuna-I2C_python)
 
-https://files.seeedstudio.com/wiki/Grove-TF_Mini_LiDAR/res/SJ-PM-TF-Luna-A03-Product-Manual.pdf
+[資料](https://files.seeedstudio.com/wiki/Grove-TF_Mini_LiDAR/res/SJ-PM-TF-Luna-A03-Product-Manual.pdf)
 
 ### I2C接続の確認
 
 uEnv.txtでi2cを活性化しておきます。ポート4が活性化され、他のポートはシステムで使われています。
 以下でポートとアドレスが確認できます。TFLunaはポート4 アドレス10になります。RTCのアドレスは68です。
+サンプルプログラム中のsmbusをsambus2に変更して使ってください。
+
 ```
 # ls /dev/*i2c*
 # /dev/i2c-1 ・・・
