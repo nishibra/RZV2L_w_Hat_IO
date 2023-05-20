@@ -43,9 +43,10 @@ class_krs_dr.pyをダウンロードしてRZボードに転送します。
 $ scp class_krs_dr.py root@192.168.8.99:~root/sv
 $ ssh root@192.168.8.99
 
+# cd sv
 # python3 class_krs_dr.py
 ```
-でサーボが動作します。
+でサーボモータが動作します。
 
 
 
