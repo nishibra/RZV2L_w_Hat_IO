@@ -1,6 +1,6 @@
 # RZV2L_w_Hat_IO
 
-RZ-BoardにRasPi4用HATを組み合わせてロボットを開発します。
+RZ-BoardにRasPi4用HATを組み合わせてUART/I2C/GPIOをコントロールします。
 
 ![RZV2L_w_Hat_IO](/pics/rz_hat.jpg)
 
