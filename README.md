@@ -94,4 +94,15 @@ uEnv.txtでi2cを活性化しておきます。ポート4が活性化され、�
 # i2cdetect -y 4
 ```
 
+### GPIOでFANのコントロール
+
+HATのFANはGPIOに接続されています。GPIOを出力にし、ビットを立てればFANが回ります。
+
+tool/fan.shをRZボードにコピーし以下のように実行してください。
+
+```
+# chmod +x fan.sh
+# ./fan.sh
+```
+
 
